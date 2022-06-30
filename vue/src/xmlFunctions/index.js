@@ -7,9 +7,9 @@ export const functions = {
           while (defaultData.tagName !== find) {
             defaultData = defaultData.previousElementSibling ;
           }
-          return defaultData.innerHTML;
+          return defaultData.firstChild?.wholeText?.trim();
         }
       }
-      return data.innerHTML;
+      return data.firstChild?.wholeText?.trim();
    }
 }

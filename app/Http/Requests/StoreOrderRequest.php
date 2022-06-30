@@ -24,8 +24,9 @@ class StoreOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'order_id' => 'required|integer|unique:orders',
-            'order_count' => 'required|integer'
+            'orders' => 'required|array',
+            'orders.*.order_id' => 'required|string',
+            'orders.*.order_count' => 'required|integer'
         ];
     }
 }
